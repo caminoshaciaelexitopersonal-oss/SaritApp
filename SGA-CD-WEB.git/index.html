@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGA-CD: Sistema de Gestión Académica para formación cultural y deportivo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00A651">
+</head>
+<body>
+
+    <header>
+        <h1 id="header-title">SGA-CD</h1>
+        <nav>
+            <a href="#funcionalidades">Funcionalidades</a>
+            <a href="#partners">Nuestros Clientes</a>
+            <a href="#faq">Preguntas</a>
+            <a href="#planes">Planes</a>
+            <a href="#registro">Registrarse</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <!-- El slider se insertará aquí dinámicamente -->
+            <div id="hero-slider" class="slider-container"></div>
+        </section>
+
+        <section id="presentacion">
+            <h2>Video de Presentación</h2>
+            <div id="video-container" class="video-container">
+                <!-- El video se insertará aquí dinámicamente -->
+            </div>
+        </section>
+
+        <section id="funcionalidades">
+            <h2>Funcionalidades Clave</h2>
+            <!-- Las funcionalidades se insertarán aquí dinámicamente -->
+            <div id="features-grid" class="features-grid"></div>
+            <a href="#planes" class="cta-button">Ver Planes y Precios</a>
+        </section>
+
+        <section id="partners">
+            <h2>Nuestros Clientes</h2>
+            <div id="clients-grid" class="partners-grid slider">
+                <!-- Los logos de los clientes se insertarán aquí -->
+            </div>
+            <h2 class="sub-heading">Empresas que nos Prueban</h2>
+            <div id="testers-grid" class="partners-grid">
+                <!-- Los logos de los probadores se insertarán aquí -->
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <!-- Las preguntas y respuestas se insertarán aquí dinámicamente -->
+            <div id="faq-container" class="faq-container"></div>
+        </section>
+
+        <section id="planes">
+            <h2>Nuestros Planes</h2>
+            <div id="pricing-grid" class="pricing-grid">
+                <!-- Los planes de precios se insertarán aquí dinámicamente -->
+            </div>
+        </section>
+
+        <section id="oferta-lanzamiento">
+            <h2>Oferta de Lanzamiento</h2>
+            <div id="launch-offer-container" class="offer-container">
+                <!-- El texto de la oferta se insertará aquí -->
+            </div>
+        </section>
+
+        <section id="registro">
+            <h2>¿Listo para Empezar?</h2>
+            <a href="register.html" class="cta-button">Crea tu Cuenta Ahora</a>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="footer-content">
+            <div id="company-info" class="footer-section">
+                <!-- Nombre, misión, visión aquí -->
+            </div>
+            <div id="contact-info" class="footer-section">
+                <!-- Email, teléfono, dirección aquí -->
+            </div>
+            <div id="social-media" class="footer-section">
+                <!-- Enlaces a redes sociales aquí -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Sales Agent Widget -->
+    <div id="ai-agent-widget">
+        <button id="ai-agent-toggle">🤖</button>
+        <div id="ai-agent-chatbox" class="hidden">
+            <div id="chatbox-header">
+                Asistente de Ventas
+            </div>
+            <div id="chatbox-messages">
+                <!-- Messages will be appended here -->
+            </div>
+            <div id="chatbox-input-container">
+                <input type="text" id="chatbox-input" placeholder="Pregunta algo...">
+                <button id="chatbox-send">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
