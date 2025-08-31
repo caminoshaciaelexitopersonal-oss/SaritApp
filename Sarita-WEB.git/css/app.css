@@ -1,0 +1,681 @@
+/* ==========================================================================
+   1. Variables y Temas (Light/Dark Mode)
+   ========================================================================== */
+
+:root {
+    /* Paleta base (Light Mode) */
+    --color-primary: #008F87; /* Verde-Esmeralda Azulado */
+    --color-secondary: #FFD369; /* Dorado/Amarillo Brillante */
+    --color-background: #F7F9F9; /* Blanco Suave */
+    --color-surface: #FFFFFF; /* Blanco para tarjetas */
+    --color-text-primary: #1C1C1E; /* Negro Profundo */
+    --color-text-secondary: #4A4A4A; /* Gris Oscuro */
+    --color-border: #E0E0E0; /* Gris Claro */
+}
+
+[data-theme="dark"] {
+    /* Paleta para Dark Mode */
+    --color-primary: #00B3A4; /* Verde-Esmeralda más brillante */
+    --color-secondary: #FFD369; /* Dorado se mantiene */
+    --color-background: #1C1C1E; /* Negro Profundo */
+    --color-surface: #2B2B2E; /* Gris Oscuro para tarjetas */
+    --color-text-primary: #EFEFEF; /* Blanco Suave */
+    --color-text-secondary: #A8A8A8; /* Gris Claro */
+    --color-border: #2E5E5C; /* Verde azulado tenue */
+}
+
+/* ==========================================================================
+   2. Estilos para la sección de login y registro
+   ========================================================================== */
+
+#login-section, #registro-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid var(--color-border);
+}
+
+#login-section h2, #registro-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-primary);
+}
+
+#login-form input, #form-registro input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    border-radius: 4px;
+}
+
+#login-form button, #form-registro button {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: var(--color-primary);
+    color: #FFFFFF; /* El texto de los botones primarios suele ser blanco */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+#login-form button:hover, #form-registro button:hover {
+    filter: brightness(1.1);
+}
+
+.message-error {
+    color: #D8000C;
+    background-color: #FFD2D2;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.message-success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.message-info {
+    color: #00529B;
+    background-color: #BDE5F8;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+
+/* Estilos para la aplicación principal (app.html) */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.app-layout {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: rgba(0,0,0,0.2); /* Un poco más oscuro para dar profundidad */
+}
+
+.app-nav {
+    flex-grow: 1;
+    padding: 1rem 0;
+}
+
+.app-nav a {
+    display: block;
+    color: var(--color-surface);
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.app-nav a:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    text-align: center;
+}
+
+#logout-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--color-secondary);
+    border: none;
+    color: var(--color-text-primary);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: filter 0.3s;
+}
+
+#logout-btn:hover {
+    filter: brightness(1.1);
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.3s, border-bottom 0.3s;
+}
+
+#user-info {
+    text-align: right;
+}
+
+#user-info p {
+    margin: 0;
+    color: var(--color-text-primary);
+}
+#user-info span {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.content-area {
+    padding: 2rem;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Estilos para Login Social */
+.social-login-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: var(--color-text-secondary);
+}
+
+.social-login-divider::before,
+.social-login-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.social-login-divider:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.social-login-divider:not(:empty)::after {
+    margin-left: .5em;
+}
+
+.social-login-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.social-btn {
+    padding: 0.75rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    color: var(--color-primary);
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+.social-btn .fab {
+    font-size: 1.2rem;
+}
+
+/* Estilos para el Modal Genérico */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid var(--color-border);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+}
+
+.modal-body {
+    padding-top: 1rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Estilos para la vista de Gamificación del Alumno */
+.gamificacion-alumno {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.stats-card {
+    background: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-border);
+}
+
+.stats-card h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+}
+
+.puntaje {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-text-primary);
+}
+
+.lista-medallas {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-medallas li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.lista-medallas li .fa-medal {
+    color: var(--color-secondary);
+    margin-right: 0.5rem;
+}
+
+.stats-card.ranking .data-table {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Estilos para la Interfaz del Agente IA */
+.agent-interface-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: var(--color-surface);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-border);
+}
+
+.agent-interface-container h3 {
+    margin-top: 0;
+    color: var(--color-text-primary);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+}
+
+.agent-interface-container h3 .fa-robot {
+    margin-right: 0.5rem;
+    color: var(--color-primary);
+}
+
+.agent-response {
+    min-height: 100px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--color-background);
+    white-space: pre-wrap; /* Para conservar los saltos de línea */
+    color: var(--color-text-secondary);
+}
+
+.agent-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.agent-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 80px;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+.agent-form button {
+    padding: 0.9rem;
+    background-color: var(--color-secondary);
+    color: var(--color-text-primary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    align-self: flex-end;
+    font-weight: bold;
+    transition: filter 0.3s;
+}
+
+.agent-form button:hover {
+    filter: brightness(1.1);
+}
+
+/* ==========================================================================
+   Estilos para el Theme Switcher
+   ========================================================================== */
+
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-switcher .fas {
+    color: var(--color-text-secondary);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--color-primary);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--color-primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* ==========================================================================
+   Estilos para el Icono de Agente Flotante
+   ========================================================================== */
+
+.floating-agent-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1001;
+    overflow: hidden; /* Para contener la animación del borde */
+    padding: 3px; /* Espacio para el borde animado */
+    background: var(--color-surface);
+    color: var(--color-primary);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.floating-agent-icon::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent,
+        var(--color-secondary),
+        var(--color-primary),
+        var(--color-secondary),
+        transparent
+    );
+    animation: rotateBorder 4s linear infinite;
+}
+
+.floating-agent-icon .fas {
+    position: relative;
+    z-index: 2;
+    background-color: var(--color-surface);
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.floating-agent-icon:hover .fas {
+    color: var(--color-surface);
+    background-color: var(--color-primary);
+}
+
+
+@keyframes rotateBorder {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes vibrate {
+    0% { transform: translate(0); }
+    20% { transform: translate(-1px, 1px); }
+    40% { transform: translate(-1px, -1px); }
+    60% { transform: translate(1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0); }
+}
+
+.floating-agent-icon.is-speaking .fas {
+    animation: vibrate 0.2s linear infinite;
+}
+
+/* ==========================================================================
+   Estilos para la Interfaz de Chat del Agente
+   ========================================================================== */
+
+.agent-chat-container {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 370px;
+    max-height: 500px;
+    background: var(--color-surface);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    border: 1px solid var(--color-border);
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: var(--color-primary);
+    color: var(--color-surface);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.chat-close-btn {
+    background: none;
+    border: none;
+    color: var(--color-surface);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.chat-log {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.chat-message {
+    padding: 0.6rem 1rem;
+    border-radius: 18px;
+    max-width: 80%;
+    line-height: 1.4;
+}
+
+.chat-message.agent {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-message.user {
+    background-color: var(--color-secondary);
+    color: var(--color-text-primary);
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-form {
+    display: flex;
+    border-top: 1px solid var(--color-border);
+    padding: 0.5rem;
+}
+
+.chat-form input {
+    flex-grow: 1;
+    border: none;
+    padding: 0.75rem;
+    background: transparent;
+    color: var(--color-text-primary);
+}
+
+.chat-form input:focus {
+    outline: none;
+}
+
+.chat-form button {
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 0.75rem;
+}

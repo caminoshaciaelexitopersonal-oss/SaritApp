@@ -1,0 +1,298 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+}
+
+/* Header Styles */
+header {
+    background: var(--color-primary);
+    color: var(--color-surface);
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+    color: var(--color-surface);
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+}
+
+p {
+    color: var(--color-text-secondary);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: var(--color-primary);
+    color: var(--color-surface);
+}
+
+footer a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+
+/* Grid Layout for Features and Plans */
+.features-grid, .pricing-grid, .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    align-items: center;
+}
+
+.feature-card, .plan-card {
+    background: var(--color-surface);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover, .plan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.plan-card .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.plan-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.plan-card ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.plan-card.recommended {
+    border: 2px solid var(--color-primary);
+}
+
+.recommended-badge {
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: var(--color-secondary);
+    color: var(--color-text-primary);
+    padding: 5px 30px;
+    transform: rotate(45deg);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+/* Call to Action Button Styles */
+.cta-button, .plan-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--color-secondary);
+    color: var(--color-text-primary);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.cta-button:hover, .plan-button:hover {
+    transform: scale(1.05);
+}
+
+/* FAQ Section */
+.faq-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
+}
+.faq-item {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 0;
+    cursor: pointer;
+    color: var(--color-text-primary);
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.faq-answer p {
+    padding: 0 1rem 1rem 1rem;
+}
+
+/* AI Agent Widget Layout */
+#ai-agent-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+#ai-agent-chatbox {
+    position: absolute;
+    bottom: 80px; /* Position it above the toggle button */
+    right: 0;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#ai-agent-chatbox.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+
+/* AI Agent Widget Styles */
+#ai-agent-toggle {
+    background: var(--color-primary);
+    color: var(--color-surface);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#chatbox-header {
+    background: var(--color-primary);
+    color: var(--color-surface);
+}
+
+/* Registration Form Styles */
+#registro-form button {
+    padding: 1rem;
+    background: var(--color-primary);
+    color: var(--color-surface);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Animated Border for AI Chatbox */
+#ai-agent-chatbox {
+    position: relative; /* Essential for positioning pseudo-elements */
+    border-radius: 12px;
+    overflow: hidden; /* Hides the parts of the gradient outside the border */
+    background: var(--color-background);
+    padding: 1px; /* Fallback for border */
+}
+
+/* The animated gradient layer */
+#ai-agent-chatbox::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent,
+        var(--color-secondary),
+        var(--color-primary),
+        var(--color-secondary),
+        transparent
+    );
+    animation: rotateBorder 6s linear infinite;
+}
+
+/* The inner content area that masks the gradient */
+#ai-agent-chatbox::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    background: var(--color-background);
+    border-radius: 10px; /* Slightly smaller radius than the container */
+    z-index: 1; /* Ensure it's above the ::before pseudo-element */
+}
+
+/* Keyframes for the rotation animation */
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ensure child elements of the chatbox appear above the ::after mask */
+#chatbox-header, #chatbox-messages, #chatbox-input-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Adjust chatbox header to look good on a dark background */
+#chatbox-header {
+    background: var(--primary);
+    color: var(--white-soft); /* Use soft white for better readability */
+    padding: 0.75rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Animation for the floating agent button when it 'speaks' */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 166, 81, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(0, 166, 81, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 166, 81, 0);
+    }
+}
+
+#ai-agent-toggle.agent-speaking {
+    animation: pulse-glow 2s infinite;
+}

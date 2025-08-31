@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - SGA-CD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00A651">
+</head>
+<body>
+
+    <header>
+        <h1><a href="index.html" style="color:white; text-decoration:none;">SGA-CD</a></h1>
+    </header>
+
+    <main>
+        <section id="login-section">
+            <h2>Acceso a la Plataforma</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Nombre de Usuario" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <div id="login-mensaje"></div>
+                <button type="submit">Ingresar</button>
+            </form>
+
+            <div class="social-login-divider">
+                <span>O inicia sesión con</span>
+            </div>
+
+            <div class="social-login-buttons">
+                <button id="google-login-btn" class="social-btn google">
+                    <i class="fab fa-google"></i> Google
+                </button>
+                <button id="facebook-login-btn" class="social-btn facebook">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </button>
+                <button id="microsoft-login-btn" class="social-btn microsoft">
+                    <i class="fab fa-microsoft"></i> Microsoft
+                </button>
+            </div>
+
+            <p style="text-align: center; margin-top: 1.5rem;">¿Tu organización aún no está registrada? <a href="register.html">Crea una cuenta</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SGA-CD. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Archivo de configuración global -->
+    <script src="js/config.js"></script>
+    <!-- Lógica de autenticación -->
+    <script src="js/auth.js"></script>
+    <!-- Lógica de OAuth -->
+    <script src="js/oauth.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Secrets
+client_secrets.json
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database
+*.db
+*.sqlite3
