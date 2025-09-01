@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from ..models.user import Alumno
+from models.user import Alumno
 from app.schemas.alumno import AlumnoCreate, AlumnoUpdate
 
 def get(db: Session, alumno_id: int) -> Alumno | None:

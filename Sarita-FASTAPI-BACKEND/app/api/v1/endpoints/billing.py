@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, Request
 from sqlalchemy.orm import Session
-from app import schemas, models
+from app import schemas
+import models
 from app.api import deps
 from app.services.billing_service import BillingService
 

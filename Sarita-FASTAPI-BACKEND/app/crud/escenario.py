@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from typing import List
 from datetime import datetime
 
-from ..models.academic import Escenario, EscenarioParte, Reserva
+from models.academic import Escenario, EscenarioParte, Reserva
 from app.schemas.escenario import EscenarioCreate, EscenarioUpdate, ReservaCreate, ReservaUpdate
 
 # --- CRUD for Escenario ---

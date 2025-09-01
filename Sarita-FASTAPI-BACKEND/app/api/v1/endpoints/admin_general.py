@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
-from app import models
+import models
 from app.api import deps
 from app.crud import settings as crud_settings
 import logging

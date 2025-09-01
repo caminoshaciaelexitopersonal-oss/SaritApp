@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from ..models.inventory import Elemento, Prestamo
+from models.inventory import Elemento, Prestamo
 from app.schemas.inventory import ElementoCreate, ElementoUpdate, PrestamoCreate, PrestamoUpdate
 
 # --- CRUD for Elemento ---

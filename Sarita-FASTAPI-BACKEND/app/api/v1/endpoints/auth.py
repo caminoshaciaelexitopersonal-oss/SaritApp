@@ -6,7 +6,8 @@ from sqlalchemy import text
 from jose import jwt, JWTError
 from pydantic import ValidationError
 
-from app import crud, schemas, models
+from app import crud, schemas
+from models import user as user_models
 from app.api import deps
 from app.core import security
 from app.core.config import settings
@@ -72,7 +73,7 @@ def refresh_token(
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    user = db.query(models.user.Usuario).filter(models.user.Usuario.id == token_data.sub).first()
+    user = db.query(user_models.Usuario).filter(user_models.Usuario.id == token_data.sub).first()
     if not user:
         raise HTTPException(status_code=404, detail="User not found")
     if not user.activo:

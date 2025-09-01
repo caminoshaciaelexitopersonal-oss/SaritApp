@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from ..models.academic import Notificacion
+from models.academic import Notificacion
 from app.schemas.notificacion import NotificacionCreate
 
 def get_notificaciones_by_user(

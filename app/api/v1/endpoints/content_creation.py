@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from app import models, schemas
+from app import schemas
+import models
 from app.api import deps
 from app.agents.corps.units.platoons.squads.marketing_sargento import get_marketing_sargento_graph
 

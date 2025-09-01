@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from ..models.communication import (
+from models.communication import (
     ChatConversacion, ChatParticipante, ChatMensaje,
     ForoClase, ForoHilo, ForoPublicacion
 )

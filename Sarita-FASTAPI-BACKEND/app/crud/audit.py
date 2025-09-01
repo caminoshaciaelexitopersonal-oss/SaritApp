@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from ..models.academic import AuditLog
+from models.academic import AuditLog
 from app.schemas.audit import AuditLogCreate
 
 def get_audit_logs_by_tenant(
