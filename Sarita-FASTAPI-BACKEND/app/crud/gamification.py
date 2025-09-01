@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from ..models.gamification import (
+from models.gamification import (
     GamificacionAccion, GamificacionPuntosLog, GamificacionMedalla, GamificacionMedallaObtenida,
     GamificacionMision, GamificacionMercadoItem
 )

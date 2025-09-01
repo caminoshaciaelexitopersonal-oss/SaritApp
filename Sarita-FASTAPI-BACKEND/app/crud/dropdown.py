@@ -1,7 +1,7 @@
 from typing import Any, Dict, Generic, List, Optional, Type, TypeVar, Union
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
-from ..models.base import Base
+from models.base import Base
 
 # Define custom types for SQLAlchemy model and Pydantic schemas
 ModelType = TypeVar("ModelType", bound=Base)
@@ -62,7 +62,7 @@ class CRUDBase(Generic[ModelType, CreateSchemaType, UpdateSchemaType]):
         return obj
 
 # Import all dropdown models and schemas to create CRUD instances
-from ..models import dropdowns
+from models import dropdowns
 from app.schemas import dropdown
 
 # Create a dictionary to hold all the CRUD objects

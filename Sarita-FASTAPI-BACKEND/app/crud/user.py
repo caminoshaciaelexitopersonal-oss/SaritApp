@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 
 # This import now works because `sga_cd_db` was installed as an editable package.
-from ..models.user import Usuario
+from models.user import Usuario
 from app.schemas.user import UserCreate
 from app.core.security import get_password_hash
 

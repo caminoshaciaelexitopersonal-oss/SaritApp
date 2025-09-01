@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from ..models.academic import Evento, EventoParticipante
+from models.academic import Evento, EventoParticipante
 from app.schemas.evento import EventoCreate, EventoUpdate, EventoParticipanteCreate
 
 # --- CRUD for Evento ---

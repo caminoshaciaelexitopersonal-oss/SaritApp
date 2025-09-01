@@ -1,7 +1,8 @@
 import logging
 from sqlalchemy.orm import Session
 from app.db.session import SessionLocal
-from app import crud, schemas, models
+from app import crud, schemas
+import models
 from app.models.user import Role, RolesEnum
 
 # Configure logging

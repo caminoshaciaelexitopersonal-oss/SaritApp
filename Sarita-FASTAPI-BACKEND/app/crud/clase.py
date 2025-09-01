@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from ..models.academic import ProcesoFormacion, Clase
+from models.academic import ProcesoFormacion, Clase
 from app.schemas.clase import ProcesoFormacionCreate, ProcesoFormacionUpdate, ClaseCreate, ClaseUpdate
 
 # --- CRUD for ProcesoFormacion ---

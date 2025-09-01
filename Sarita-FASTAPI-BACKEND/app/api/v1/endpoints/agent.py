@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException, status, UploadFile, File
 from sqlalchemy.orm import Session
-from app import schemas, models
+from app import schemas
+import models
 from app.api import deps
 import speech_recognition as sr
 from pydub import AudioSegment

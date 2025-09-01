@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from ..models.curriculum import PlanCurricular, PlanCurricularTema
+from models.curriculum import PlanCurricular, PlanCurricularTema
 from app.schemas.curriculum import PlanCurricularCreate, PlanCurricularUpdate, PlanCurricularTemaCreate, PlanCurricularTemaUpdate
 
 # --- CRUD for PlanCurricular ---

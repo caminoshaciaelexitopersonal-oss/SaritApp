@@ -3,7 +3,8 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 
-from app import models, schemas
+from app import schemas
+import models
 from app.api import deps
 
 router = APIRouter()
