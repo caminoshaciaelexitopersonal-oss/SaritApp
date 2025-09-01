@@ -13,6 +13,14 @@ padre_hijos_association = Table('padre_hijos_association', Base.metadata,
     Column('hijo_id', Integer, ForeignKey('usuarios.id'), primary_key=True)
 )
 
+# Association table for many-to-many relationship between users and roles
+user_roles_association = Table(
+    'user_roles', Base.metadata,
+    Column('user_id', Integer, ForeignKey('usuarios.id'), primary_key=True),
+    Column('role_id', Integer, ForeignKey('roles.id'), primary_key=True)
+)
+
+
 class RolesEnum(enum.Enum):
     admin_general = "admin_general"
     admin_empresa = "admin_empresa"
@@ -67,14 +75,7 @@ class Usuario(Base):
         secondaryjoin=(id == padre_hijos_association.c.hijo_id),
         backref="padres"
     )
-    roles = relationship("Role", secondary="user_roles")
-
-
-user_roles_association = Table(
-    'user_roles', Base.metadata,
-    Column('user_id', Integer, ForeignKey('usuarios.id'), primary_key=True),
-    Column('role_id', Integer, ForeignKey('roles.id'), primary_key=True)
-)
+    roles = relationship("Role", secondary=user_roles_association)
 
 class Role(Base):
     __tablename__ = 'roles'

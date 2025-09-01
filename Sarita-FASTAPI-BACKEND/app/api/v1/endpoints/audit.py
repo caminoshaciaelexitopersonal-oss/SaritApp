@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app import crud, schemas
-from app.models import user as user_model
+from models import user as user_model
 from app.api import deps
 
 router = APIRouter()

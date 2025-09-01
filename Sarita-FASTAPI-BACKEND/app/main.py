@@ -11,6 +11,13 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from app.api.v1.api import api_router
 from app.core.config import settings
+from app.db.session import engine
+# Note: The path to models is added in run_server.py, so this import should work.
+from models.base import Base
+
+# Create database tables
+# This will create the tables if they don't exist, including the sga_cd.db file for SQLite
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title=settings.PROJECT_NAME)
 

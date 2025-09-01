@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from app.models.user import Usuario
-from app.models.area import Area
+from models.user import Usuario
+from models.area import Area
 
 def get_staff_by_jefe_area(db: Session, *, jefe_area: Usuario) -> List[Usuario]:
     """
