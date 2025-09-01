@@ -22,3 +22,4 @@ from .inventory import Elemento, ElementoCreate, ElementoUpdate, Prestamo, Prest
 from .notificacion import Notificacion, NotificacionCreate, NotificacionUpdate
 from .agent import AgentInput, AgentOutput
 from .area import Area, AreaCreate, AreaUpdate
+from .scheduled_post import ScheduledPost, ScheduledPostCreate, ScheduledPostUpdate

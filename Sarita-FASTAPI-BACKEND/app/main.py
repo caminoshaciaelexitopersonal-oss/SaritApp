@@ -1,8 +1,16 @@
+import sys
+import os
+
+# Workaround for environment's PYTHONPATH issues.
+# Adds Sarita-DB.git directory to the path to allow model imports.
+db_repo_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'Sarita-DB.git'))
+if db_repo_path not in sys.path:
+    sys.path.insert(0, db_repo_path)
+
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from app.api.v1.api import api_router
 from app.core.config import settings
-import os
 
 app = FastAPI(title=settings.PROJECT_NAME)
 
