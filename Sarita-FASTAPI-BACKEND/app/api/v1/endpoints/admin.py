@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 
 from app import schemas, crud
-from app.models import user as user_model
+from models import user as user_model
 from app.api import deps
 
 router = APIRouter()

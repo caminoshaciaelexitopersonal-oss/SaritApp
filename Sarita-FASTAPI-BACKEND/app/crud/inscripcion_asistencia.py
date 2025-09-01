@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from app.models.academic import Inscripcion, Asistencia
-from app.models.user import Usuario
+from models.academic import Inscripcion, Asistencia
+from models.user import Usuario
 from app.schemas.inscripcion_asistencia import InscripcionCreate, AsistenciaCreate
 
 # --- CRUD for Inscripcion ---

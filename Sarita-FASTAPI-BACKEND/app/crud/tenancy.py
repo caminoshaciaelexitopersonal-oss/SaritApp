@@ -2,8 +2,8 @@ from sqlalchemy.orm import Session
 from sqlalchemy import text
 
 from app.schemas.tenancy import TenantCreate
-from app.models.tenancy import Inquilino
-from app.models.user import Usuario
+from models.tenancy import Inquilino
+from models.user import Usuario
 from app.core.security import get_password_hash
 
 def create_tenant_and_admin(db: Session, *, obj_in: TenantCreate) -> Inquilino:

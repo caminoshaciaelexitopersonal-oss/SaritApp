@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from typing import List
 
-from app.models.area import Area
+from models.area import Area
 from app.schemas.area import AreaCreate, AreaUpdate
 
 def get_areas_by_tenant(db: Session, *, inquilino_id: int, skip: int = 0, limit: int = 100) -> List[Area]:

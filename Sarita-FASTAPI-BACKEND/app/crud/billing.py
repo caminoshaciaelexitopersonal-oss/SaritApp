@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from typing import List, Optional
-from app.models.billing import Suscripcion, Factura
+from models.billing import Suscripcion, Factura
 from app.schemas.billing import SubscriptionCreate, SubscriptionUpdate, PaymentCreate
 
 # --- SubscriptionPlan ---

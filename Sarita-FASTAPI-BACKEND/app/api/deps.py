@@ -9,7 +9,7 @@ from app.core.config import settings
 from app.db.session import SessionLocal
 from app.schemas.token import TokenData
 from app import crud
-from app.models import user as user_model
+from models import user as user_model
 
 
 reusable_oauth2 = OAuth2PasswordBearer(
